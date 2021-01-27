@@ -1,7 +1,10 @@
 # Steinny
 
 [![Build Status](https://travis-ci.com/charity1475/steinny.svg?branch=master)](https://travis-ci.com/charity1475/steinny) [![Netlify Status](https://api.netlify.com/api/v1/badges/99c4c587-7d71-4a6c-b8f5-7d4e55d39c44/deploy-status)](https://app.netlify.com/sites/charity1475/deploys)
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+
+
+
+This project is generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
 ## Development server
 
