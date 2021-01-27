@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "netflify-test"
+    }
+  },
+  "defaultProject": "netflify-test",
+  "cli": {
+    "analytics": "c2375d66-cf08-4851-b27f-92bd1c3a06f3"
+  }
 }
