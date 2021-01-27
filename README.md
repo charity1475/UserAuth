@@ -1,5 +1,6 @@
-# NetflifyTest
+# Steinny
 
+[![Build Status](https://travis-ci.com/charity1475/steinny.svg?branch=master)](https://travis-ci.com/charity1475/steinny) [![Netlify Status](https://api.netlify.com/api/v1/badges/79db2c5b-e5f3-4837-a1ae-930ebec1366b/deploy-status)](https://app.netlify.com/sites/affectionate-elion-87b930/deploys)
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
 ## Development server
