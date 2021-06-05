@@ -26,23 +26,26 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     http
       .csrf().disable()
       .authorizeRequests()
-        .antMatchers("/api/v*/registration/**")
+        .antMatchers("/resources/**", "/static/**")
+        .permitAll()
+        .antMatchers("/login")
+        .permitAll()
+        .antMatchers("/api/v*/user/**")
         .permitAll()
       .anyRequest()
       .authenticated().and()
-      .formLogin();
-//      .loginPage("/login").permitAll()
-//      // jetty
-//      .defaultSuccessUrl("/login",true)
-//      .and()
-//      .rememberMe()
-//      .and()
-//      .logout()
-//        .logoutUrl("/logout")
-//        .clearAuthentication(true)
-//        .invalidateHttpSession(true)
-//        .deleteCookies("JSESSIONID","remember-me")
-//        .logoutSuccessUrl("/login");
+      .formLogin()
+      .loginPage("/login").permitAll()
+      .defaultSuccessUrl("/home",true)
+      .and()
+      .rememberMe()
+      .and()
+      .logout()
+        .logoutUrl("/logout")
+        .clearAuthentication(true)
+        .invalidateHttpSession(true)
+        .deleteCookies("JSESSIONID","remember-me")
+        .logoutSuccessUrl("/login");
   }
 
   @Override
