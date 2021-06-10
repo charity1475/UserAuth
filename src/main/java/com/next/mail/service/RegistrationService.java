@@ -1,5 +1,7 @@
 package com.next.mail.service;
 
+import com.next.mail.appuser.AppUser;
+import com.next.mail.appuser.AppUserRole;
 import com.next.mail.model.RegistrationRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -8,12 +10,19 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class RegistrationService {
 
-  private EmailValidator emailValidator;
+  private final AppUserService appUserService;
+  private final EmailValidator emailValidator;
   public String register(RegistrationRequest request) {
     boolean isValidEmail = emailValidator.test(request.getEmail());
-    if(isValidEmail){
-
+    if(!isValidEmail){
+        throw new IllegalStateException("Email Not Valid");
     }
-    return "Working state";
+    return appUserService.signUpUser( new AppUser(
+      request.getFirstName(),
+      request.getLastName(),
+      request.getEmail(),
+      request.getPassword(),
+      AppUserRole.USER
+    ));
   }
 }

@@ -8,12 +8,12 @@ import java.util.regex.Pattern;
 
 @Service
 public class EmailValidator implements Predicate<String> {
-  private static final String regex =  "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^-]+(?:\\\\.[a-zA-Z0-9_!#$%&'*+/=?`{|}~^-]+)*@[a-zA-Z0-9-]+(?:\\\\.[a-zA-Z0-9-]+)*$";
-  Pattern pattern = Pattern.compile(regex);
+  private static final String regex =  "^[\\\\w!#$%&'*+/=?`{|}~^-]+(?:\\\\.[\\\\w!#$%&'*+/=?`{|}~^-]+)*@(?!-)(?:[a-zA-Z0-9-]+\\\\.)+[a-zA-Z]{2,6}$";
+  Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
 
   @Override
   public boolean test(String email) {
     Matcher matcher = pattern.matcher(email);
-    return matcher.matches();
+    return true;
   }
 }
