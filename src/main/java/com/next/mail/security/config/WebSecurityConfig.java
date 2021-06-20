@@ -1,6 +1,5 @@
 package com.next.mail.security.config;
 
-import com.next.mail.security.PasswordEncoder;
 import com.next.mail.service.AppUserService;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;

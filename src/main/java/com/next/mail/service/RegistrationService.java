@@ -18,12 +18,11 @@ import java.time.LocalDateTime;
 public class RegistrationService {
 
   private final AppUserService appUserService;
-  private final EmailValidator emailValidator;
   private final ConfirmationTokenService confirmationTokenService;
   private final EmailSender emailSender;
 
   public String register(RegistrationRequest request) {
-    boolean isValidEmail = emailValidator.test(request.getEmail());
+    boolean isValidEmail = EmailValidator.test(request.getEmail());
     if(!isValidEmail){
         throw new IllegalStateException("Email Not Valid");
     }
