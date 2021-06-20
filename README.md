@@ -5,3 +5,4 @@ Dependencies
 - Data JPA
 - DB driver
 - security
+- MAilDev
