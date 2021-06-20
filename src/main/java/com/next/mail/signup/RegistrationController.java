@@ -3,10 +3,8 @@ package com.next.mail.signup;
 import com.next.mail.model.RegistrationRequest;
 import com.next.mail.service.RegistrationService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 
 @RestController
 @RequestMapping(path = "api/v1/user")
@@ -14,10 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class RegistrationController {
 
-  private RegistrationService registrationService;
+  private final RegistrationService registrationService;
 
   @PostMapping(path = "/signup")
   public String register(@RequestBody RegistrationRequest request ) {
       return registrationService.register(request);
+  }
+  @GetMapping(path = "/confirm")
+  public String confirm(@RequestParam("token") String token){
+    return registrationService.confirmToken(token);
   }
 }

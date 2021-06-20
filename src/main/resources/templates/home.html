@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
   <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h1>Welcome at Home page</h1>
-<p>You logged in  the app.</p>
+
+
+
+
+
+
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+
+
+
+<div class="jumbotron text-center">
+  <h1>Welcome to courses Catalog</h1>
+  <p>Here are courses briefings!</p>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Java</h3>
+      <p>Java is a set of computer software and specifications developed by James Gosling at Sun Microsystems, which was later acquired by the Oracle Corporation, that provides a system for developing application software and deploying it in a cross-platform computing environment</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Spring</h3>
+      <p>The Spring Framework is an application framework and inversion of control container for the Java platform. The framework's core features can be used by any Java application, but there are extensions for building web applications on top of the Java EE platform. </p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Robotics</h3>
+      <p>Robotics is an interdisciplinary field that integrates computer science and engineering. Robotics involves design, construction, operation, and use of robots. The goal of robotics is to design machines that can help and assist humans.</p>
+    </div>
+  </div>
+  <form action="/logout" method="GET">
+    <button class="btn btn-lg btn-primary" type="submit">Logout</button>
+  </form>
+</div>
+
 </body>
 </html>

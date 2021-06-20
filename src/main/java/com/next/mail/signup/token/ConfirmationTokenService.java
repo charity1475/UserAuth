@@ -3,7 +3,8 @@ package com.next.mail.signup.token;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.time.LocalDateTime;
+
 
 @Service
 @AllArgsConstructor
@@ -18,4 +19,11 @@ public class ConfirmationTokenService {
       });
       return confirmationToken;
     }
+
+  public void setConfirmedAt(String token) {
+    ConfirmationToken confirmationToken = confirmationTokenRepository.findByToken(token).orElseThrow(()->{
+      return new IllegalArgumentException("Token Not found");
+    });
+    confirmationToken.setConfirmedAt(LocalDateTime.now());
+  }
 }

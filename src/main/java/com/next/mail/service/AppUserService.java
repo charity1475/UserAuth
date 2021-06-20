@@ -44,4 +44,12 @@ public class AppUserService implements UserDetailsService {
     confirmationTokenService.saveConfirmationToken(confirmationToken);
     return token;
   }
+
+  public void enableAppUser(String email) {
+   AppUser existing = userRepository.findByEmail(email).orElseThrow(()->{
+     throw new IllegalStateException(" user doesn't exist");
+   });
+   existing.setEnabled(true);
+   userRepository.save(existing);
+  }
 }
