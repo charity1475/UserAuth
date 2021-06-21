@@ -12,6 +12,3 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-      - uses: actions/upload-artifact@v2
-        with:
-          name: deploy
